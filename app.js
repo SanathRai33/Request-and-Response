@@ -1,9 +1,13 @@
-const http = require("http");
+const express = require("express");
 
-const routesHandler = require("./routes");
+const app = express();
 
-const server = http.createServer(routesHandler);
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to Express Server</h1>");
+});
 
-server.listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
+app.listen(3000, () => {
+  console.log(
+    "Server is up and running on port 3000! Ready to handle requests."
+  );
 });

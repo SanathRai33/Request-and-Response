@@ -16,5 +16,8 @@
   },
   "homepage": "https://github.com/SanathRai33/Request-and-Response#readme",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
