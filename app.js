@@ -3,20 +3,39 @@ const express = require("express");
 const app = express();
 
 
-app.get("/welcome/:username", (req, res) => {
+// LOGGING MIDDLEWARE
+app.use((req, res, next) => {
+  console.log(`${req.method} request made to ${req.url}`);
+  next();
+});
 
-  const username = req.params.username;
 
-  const age = req.query.age;
+// GET /products
+app.get("/products", (req, res) => {
+  res.send("Here is the list of all products.");
+});
 
-  res.send(
-    `<h1>Welcome ${username}, your age is ${age}</h1>`
-  );
+
+// POST /products
+app.post("/products", (req, res) => {
+  res.send("A new product has been added.");
+});
+
+
+// GET /categories
+app.get("/categories", (req, res) => {
+  res.send("Here is the list of all categories.");
 
 });
 
 
-// SERVER
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+// POST /categories
+app.post("/categories", (req, res) => {
+  res.send("A new category has been created.");
+
+});
+
+
+app.listen(4000, () => {
+  console.log("Server is running on http://localhost:4000");
 });
