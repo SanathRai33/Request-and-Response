@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
-const shopRoutes = require("./routes/shop");
+const bookRouter = require('./routes/book')
 
-
-app.use("/shop", shopRoutes);
-
+app.use('/book', bookRouter);
 
 // SERVER
 app.listen(4000, () => {
