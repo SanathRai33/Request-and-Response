@@ -3,18 +3,16 @@ const {
 } = require("../utils/response");
 
 
-const getAllProducts = (
-  req,
-  res,
-  next
-) => {
+const getAllUsers = (req, res, next) => {
 
   try {
 
-    sendResponse(
-      res,
-      "Fetching all products"
-    );
+    const users = [
+      "Alice",
+      "Bob"
+    ];
+
+    sendResponse(res, users);
 
   } catch (err) {
 
@@ -25,20 +23,16 @@ const getAllProducts = (
 };
 
 
-const getProductById = (
-  req,
-  res,
-  next
-) => {
+const getUserById = (req, res, next) => {
 
   try {
 
     const id = req.params.id;
 
-    if (id > 10) {
+    if (id > 5) {
 
       const error = new Error(
-        "Product not found"
+        "User not found"
       );
 
       error.statusCode = 404;
@@ -49,7 +43,7 @@ const getProductById = (
 
     sendResponse(
       res,
-      `Fetching product with ID: ${id}`
+      `Fetching user with ID: ${id}`
     );
 
   } catch (err) {
@@ -61,17 +55,13 @@ const getProductById = (
 };
 
 
-const addProduct = (
-  req,
-  res,
-  next
-) => {
+const addUser = (req, res, next) => {
 
   try {
 
     sendResponse(
       res,
-      "Adding a new product",
+      "Adding a new user",
       201
     );
 
@@ -85,7 +75,7 @@ const addProduct = (
 
 
 module.exports = {
-  getAllProducts,
-  getProductById,
-  addProduct
+  getAllUsers,
+  getUserById,
+  addUser
 };

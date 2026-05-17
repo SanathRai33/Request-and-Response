@@ -2,17 +2,30 @@ const express = require("express");
 
 const app = express();
 
-const port = 4000;
+
+const userRoutes = require("./routes/userRoutes");
 
 const productRoutes = require("./routes/productRoutes");
 
-app.use(express.static("public"));
+const cartRoutes = require("./routes/cartRoutes");
+
+
+const errorHandler = require("./middleware/errorHandler");
+
+
 app.use(express.json());
 
 
-app.use("/api/products", productRoutes);
+app.use(userRoutes);
 
-app.listen(port, () => {
+app.use(productRoutes);
 
-  console.log(`Server is running on http://localhost:${port}`);
+app.use(cartRoutes);
+
+
+app.use(errorHandler);
+
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
 });
