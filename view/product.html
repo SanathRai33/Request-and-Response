@@ -3,23 +3,46 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Products</title>
+  <title>Add Product</title>
 
   <style>
 
     body{
       font-family: Arial;
+      background: #f4f4f4;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #f4f4f4;
+    }
+
+    .container{
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
     }
 
     h1{
-      color: #333;
+      text-align: center;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input{
+      padding: 10px;
+    }
+
+    button{
+      padding: 10px;
+      cursor: pointer;
     }
 
   </style>
@@ -28,7 +51,30 @@
 
 <body>
 
-  <h1>Fetching All Products</h1>
+  <div class="container">
+
+    <h1>Add Product</h1>
+
+    <form>
+
+      <label for="product">
+        Product Name
+      </label>
+
+      <input
+        type="text"
+        id="product"
+        name="productName"
+        placeholder="Enter product name"
+      />
+
+      <button type="submit">
+        Add Product
+      </button>
+
+    </form>
+
+  </div>
 
 </body>
 
