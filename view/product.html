@@ -2,79 +2,44 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Add Product</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <style>
-
-    body{
-      font-family: Arial;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container{
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
-    }
-
-    h1{
-      text-align: center;
-    }
-
-    form{
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input{
-      padding: 10px;
-    }
-
-    button{
-      padding: 10px;
-      cursor: pointer;
-    }
-
-  </style>
+  <title>Products</title>
 
 </head>
 
 <body>
 
-  <div class="container">
+  <h1>Fetch All products</h1>
 
-    <h1>Add Product</h1>
+  <form onsubmit="onSubmitHandler(event)">
 
-    <form>
+    <label for="product">
+      Product
+    </label>
 
-      <label for="product">
-        Product Name
-      </label>
+    <input
+      id="product"
+      name="productName"
+      type="text"
+    />
 
-      <input
-        type="text"
-        id="product"
-        name="productName"
-        placeholder="Enter product name"
-      />
+    <button type="submit">
+      Add Product
+    </button>
 
-      <button type="submit">
-        Add Product
-      </button>
+  </form>
 
-    </form>
 
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="/js/product.js"></script>
 
 </body>
 

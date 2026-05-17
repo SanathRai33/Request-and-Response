@@ -2,10 +2,17 @@ const express = require("express");
 
 const app = express();
 
+const port = 4000;
+
 const productRoutes = require("./routes/productRoutes");
 
-app.use(productRoutes);
+app.use(express.static("public"));
+app.use(express.json());
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+
+app.use("/api/products", productRoutes);
+
+app.listen(port, () => {
+
+  console.log(`Server is running on http://localhost:${port}`);
 });
